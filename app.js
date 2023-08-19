@@ -19,7 +19,7 @@ app.get('/api/status', function(req, res) {
       return res.status(500).send('error fetching client from pool');
     }
     //client.query('SELECT now() as time', [], function(err, result) {
-     client.query('SELECT NAME as name, ID as id, AGE as age, ADDRESS as address, SALARY as salary from public.COMPANY;', [], function(err, result) {
+     client.query('SELECT * from public.COMPANY;', function(err, result) {
       //call `done()` to release the client back to the pool
       done();
 
