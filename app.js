@@ -18,14 +18,25 @@ app.get('/api/status', function(req, res) {
     if(err) {
       return res.status(500).send('error fetching client from pool');
     }
-    client.query('SELECT * from public.COMPANY;', function(err, result) {
+    //client.query('SELECT now() as time', [], function(err, result) {
+     client.query('SELECT * from public.COMPANY;', function(err, result) {
+      //call `done()` to release the client back to the pool
       done();
 
       if(err) {
         return res.status(500).send('error running query');
       }
 
-      return res.json(result.row);
+      return res.json(result.rows
+        //time: result.rows[0].time
+        //name: result.rows[0].name,
+        //id: result.rows[0].id,
+        //age: result.rows[0].age,
+        //address: result.rows[0].address,
+        //salary: result.rows[0].salary
+
+
+      );
     });
   });
 });
