@@ -27,7 +27,7 @@ app.get('/api/status', function(req, res) {
         return res.status(500).send('error running query');
       }
 
-      return res.json(result
+      return res.json(result.rows
         //time: result.rows[0].time
         //name: result.rows[0].name,
         //id: result.rows[0].id,
