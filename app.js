@@ -24,8 +24,8 @@ app.get('/api/status', function(req, res) {
       if(err) {
         return res.status(500).send('error creating table');
       }
-
-     client.query('SELECT * from public.COMPANY;', function(err, result) {
+    })
+    client.query('SELECT * from public.COMPANY;', function(err, result) {
       done();
 
       if(err) {
@@ -33,7 +33,7 @@ app.get('/api/status', function(req, res) {
       }
 
       return res.json(result.row);
-    })});
+    });
   });
 });
 
