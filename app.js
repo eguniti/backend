@@ -18,13 +18,6 @@ app.get('/api/status', function(req, res) {
     if(err) {
       return res.status(500).send('error fetching client from pool');
     }
-    client.query('CREATE TABLE COMPANY(ID INT PRIMARY KEY NOT NULL, NAME TEXT NOT NULL, AGE INT NOT NULL, ADDRESS CHAR(50), SALARY REAL);', function(err, result) {
-      done();
-
-      if(err) {
-        return res.status(500).send('error creating table');
-      }
-    })
     client.query('SELECT * from public.COMPANY;', function(err, result) {
       done();
 
