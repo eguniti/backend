@@ -1,4 +1,4 @@
-# Demo 3tier app
+# Demo 3tier app using Nodejs
 
 
 ### install the node packages for the api tier:
