@@ -15,7 +15,7 @@ RUN apt -y install nodejs
 # Copying the backend code into /opt/backend
 COPY . /opt/backend
 
-# Installing the node apps
+# Installing the node app
 RUN npm install
 
 # Starting the application when container will start
